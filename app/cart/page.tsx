@@ -156,11 +156,11 @@ const Cart: React.FC = () => {
       // Fetch the Razorpay key
       const {
         data: { key },
-      } = await axios.get("http://localhost:8000/api/getkey");
+      } = await axios.get("https://backend-codemaners.onrender.com/api/getkey");
 
       // Create a new order on the backend
       const res = await axios.post(
-        "http://localhost:8000/api/checkout",
+        "https://backend-codemaners.onrender.com/api/checkout",
         {
           cart: {
             totalQty: cartItems.reduce(
@@ -196,7 +196,7 @@ const Cart: React.FC = () => {
         handler: async function (response: any) {
           try {
             await axios.post(
-              "http://localhost:8000/api/payment-verification",
+              "https://backend-codemaners.onrender.com/api/payment-verification",
               {
                 orderId: res.data.order._id,
                 razorpayPaymentId: response.razorpay_payment_id,
