@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 const Header = dynamic(() => import("../components/Header"), { ssr: false });
 import OrderList from "./OrderList";
 import Loader from "../components/Loader";
-import UserProtected from "../hooks/userProtected";
+const UserProtected = dynamic(() => import("../hooks/userProtected"), {
+  ssr: false,
+});
 
 const Page = () => {
   const [orders, setOrders] = useState([]);
