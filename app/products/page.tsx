@@ -1,9 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import { useGetProductsForUsersQuery } from "@/redux/features/product/productApi";
 import Loader from "../components/Loader";
-import Header from "../components/Header";
+const Header = dynamic(() => import("../components/Header"), { ssr: false });
 import { FaStar } from "react-icons/fa"; // Import star icon
 import Link from "next/link";
 

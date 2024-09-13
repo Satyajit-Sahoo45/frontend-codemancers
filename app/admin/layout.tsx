@@ -1,6 +1,9 @@
 "use client";
 
-import AdminProtected from "../hooks/adminProtected";
+import dynamic from "next/dynamic";
+const AdminProtected = dynamic(() => import("../hooks/adminProtected"), {
+  ssr: false,
+});
 
 export default function RootLayout({
   children,

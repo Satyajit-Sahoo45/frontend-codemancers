@@ -2,7 +2,7 @@ import SquigglyLines from "@/app/utils/SquigglyLines";
 import Link from "next/link";
 import React from "react";
 
-export const Hero = () => {
+const Hero = () => {
   const userData = JSON.parse(localStorage.getItem("user") as string);
 
   return (
@@ -30,3 +30,5 @@ export const Hero = () => {
     </main>
   );
 };
+
+export default Hero;

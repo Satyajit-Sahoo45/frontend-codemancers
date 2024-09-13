@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import {
   useAddReviewInProductMutation,
   useGetProductDetailsQuery,
@@ -10,7 +11,7 @@ import { FaStar } from "react-icons/fa";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { styles } from "@/app/components/styles/style";
 import toast from "react-hot-toast";
-import Header from "@/app/components/Header";
+const Header = dynamic(() => import("@/app/components/Header"), { ssr: false });
 import { useAddToCartMutation } from "@/redux/features/cart/cartApi";
 import Loader from "@/app/components/Loader";
 

@@ -1,8 +1,15 @@
 "use client";
 
 import React from "react";
-import AdminSidebar from "../../components/Admin/sidebar/AdminSidebar";
-import AllProducts from "@/app/components/Admin/product/AllProducts";
+import dynamic from "next/dynamic";
+const AdminSidebar = dynamic(
+  () => import("../../components/Admin/sidebar/AdminSidebar"),
+  { ssr: false }
+);
+const AllProducts = dynamic(
+  () => import("@/app/components/Admin/product/AllProducts"),
+  { ssr: false }
+);
 
 type Props = {};
 

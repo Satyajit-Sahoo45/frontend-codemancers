@@ -1,7 +1,15 @@
 "use client";
 import React from "react";
-import AdminProtected from "../hooks/adminProtected";
-import AdminSidebar from "../components/Admin/sidebar/AdminSidebar";
+import dynamic from "next/dynamic";
+const AdminProtected = dynamic(() => import("../hooks/adminProtected"), {
+  ssr: false,
+});
+const AdminSidebar = dynamic(
+  () => import("../components/Admin/sidebar/AdminSidebar"),
+  {
+    ssr: false,
+  }
+);
 
 type Props = {};
 

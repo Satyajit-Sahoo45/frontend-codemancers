@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import React, { Component, FC, useEffect, useState } from "react";
 import NavItems from "../utils/NavItems";
@@ -7,9 +8,11 @@ import { HiOutlineMenuAlt3, HiOutlineUserCircle } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import Login from "./Auth/Login";
-import SignUp from "./Auth/SignUp";
-import CustomModal from "../utils/CustomModal";
+const Login = dynamic(() => import("./Auth/Login"), { ssr: false });
+const SignUp = dynamic(() => import("./Auth/SignUp"), { ssr: false });
+const CustomModal = dynamic(() => import("../utils/CustomModal"), {
+  ssr: false,
+});
 import { MdExitToApp } from "react-icons/md";
 import { redirect, useRouter } from "next/navigation";
 

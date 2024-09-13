@@ -1,10 +1,10 @@
 "use client";
-
-import OrderList from "./OrderList";
+import dynamic from "next/dynamic";
 import { useGetUserOrdersQuery } from "@/redux/features/order/orderApi";
 import { useEffect, useState } from "react";
+const Header = dynamic(() => import("../components/Header"), { ssr: false });
+import OrderList from "./OrderList";
 import Loader from "../components/Loader";
-import Header from "../components/Header";
 import UserProtected from "../hooks/userProtected";
 
 const Page = () => {

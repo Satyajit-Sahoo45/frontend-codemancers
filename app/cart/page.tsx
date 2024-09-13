@@ -1,7 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("../components/Header"), {
+  ssr: false,
+});
+
 import {
   useDeleteCartMutation,
   useDeleteItemFromCartMutation,
@@ -15,7 +19,9 @@ import {
   useAddAddressMutation,
   useGetAddressQuery,
 } from "@/redux/features/auth/authApi";
-import UserProtected from "../hooks/userProtected";
+const UserProtected = dynamic(() => import("../hooks/userProtected"), {
+  ssr: false,
+});
 
 // Type definitions
 type CartItem = {

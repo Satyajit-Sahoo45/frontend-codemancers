@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
+"use client";
 
 export default function UserAuth() {
-  const user = localStorage.getItem("accessToken");
+  const user = !!localStorage.getItem("accessToken");
 
   if (user) {
     return true;
