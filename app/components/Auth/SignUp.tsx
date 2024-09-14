@@ -58,7 +58,7 @@ const SignUp: FC<Props> = ({ setRoute, setOpen, refetch }) => {
 
   return (
     <div className="w-full">
-      <h1 className={`${styles.title}`}>Join ELearning</h1>
+      <h1 className={`${styles.title}`}>Signup</h1>
       <br />
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

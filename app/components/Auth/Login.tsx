@@ -55,7 +55,7 @@ const Login: FC<Props> = ({ setRoute, setOpen, refetch }) => {
   return (
     <div className="w-full">
       <h1 className="text-[25px] text-black dark:text-white font-[500] font-sans text-center py-2">
-        Login with ELearning
+        Login
       </h1>
       <br />
       <form onSubmit={handleSubmit}>
