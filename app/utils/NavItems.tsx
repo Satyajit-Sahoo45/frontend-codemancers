@@ -27,8 +27,8 @@ export const navItemsData = [
 type Props = {
   activeItem: number;
   isMobile: boolean;
-  userData?: { role: string }; // Adjust based on your user data structure
-  isLoggedIn: boolean; // New prop to check if the user is logged in
+  userData?: { role: string };
+  isLoggedIn: boolean;
 };
 
 const NavItems: React.FC<Props> = ({
@@ -37,7 +37,6 @@ const NavItems: React.FC<Props> = ({
   userData,
   isLoggedIn,
 }) => {
-  // Determine which items to show based on user role and authentication status
   const filteredNavItems = (() => {
     if (!isLoggedIn) {
       return navItemsData.filter(
@@ -86,7 +85,7 @@ const NavItems: React.FC<Props> = ({
               <span
                 className={`text-[25px] font-sans font-[500] text-black dark:text-white`}
               >
-                LMS
+                Ecommerce
               </span>
             </Link>
           </div>

@@ -65,7 +65,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                 isLoggedIn={userData ? true : false}
               />
               {/* only for mobile */}
-              <div className="md:hidden">
+              <div className="md:hidden pr-2">
                 <HiOutlineMenuAlt3
                   size={20}
                   className="cursor-pointer dark:text-white text-black"
@@ -99,16 +99,16 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             id="screen"
           >
             <div className="w-[70%] fixed z-[999999999] h-screen bg-white dark:bg-slate-900 dark:bg-opacity-90 top-0 right-0">
-              <NavItems activeItem={activeItem} isMobile={true} />
-              <HiOutlineUserCircle
-                size={25}
-                className="cursor-pointer ml-5 my-2 dark:text-white text-black"
-                onClick={() => setOpen(true)}
+              <NavItems
+                activeItem={activeItem}
+                isMobile={true}
+                userData={userData}
+                isLoggedIn={userData ? true : false}
               />
               <br />
               <br />
               <p className="text-[16px] px-2 pl-5 text-black dark:text-white">
-                Copywrite © {new Date().getFullYear()} LMS
+                Copywrite © {new Date().getFullYear()} Ecommerce
               </p>
             </div>
           </div>

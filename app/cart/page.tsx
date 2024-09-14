@@ -23,7 +23,6 @@ const UserProtected = dynamic(() => import("../hooks/userProtected"), {
   ssr: false,
 });
 
-// Type definitions
 type CartItem = {
   _id: string;
   productId: {
@@ -96,7 +95,7 @@ const Cart: React.FC = () => {
 
   useEffect(() => {
     if (data) {
-      setCartItems(data.carts.flatMap((cart) => cart.items)); // Flatten the nested cart items
+      setCartItems(data.carts.flatMap((cart) => cart.items));
     }
   }, [data]);
 
